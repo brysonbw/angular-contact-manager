@@ -165,10 +165,10 @@ export class ContactForm implements OnInit {
   }
 
   public onDelete(id: string): void {
-    if (this.isEditing()) {
-      if (id) {
-        this.confirmDelete(id);
-      }
+    if (this.isEditing() && id) {
+      this.confirmDelete(id);
+    } else {
+      this.toastService.add(`Unable to delete contact.`);
     }
   }
 
@@ -177,8 +177,6 @@ export class ContactForm implements OnInit {
       this.contactService.deleteContact(id);
       this.toastService.add(`Contact deleted successfully!`);
       this.router.navigate(['/']);
-    } else {
-      this.toastService.add(`Unable to delete contact. Please try again.`);
     }
   }
 
