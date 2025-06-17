@@ -44,7 +44,7 @@
         type="button"
         (click)="addPhoneNumber()"
       >
-        <fa-icon [icon]="faAdd" size="xl" />
+        <fa-icon [icon]="faAdd" size="xl" class="add-icon" />
         Add phone number(s)
       </button>
 
@@ -61,7 +61,7 @@
             (click)="removePhoneNumber($index)"
             [disabled]="phoneNumbers.controls.length === 5"
           >
-            <fa-icon [icon]="faRemove" size="xl" style="color: #ee3434" />
+            <fa-icon [icon]="faRemove" size="xl" style="color: var(--error)" />
           </button>
         </div>
         @if (formSubmitted && item.errors) {
@@ -77,7 +77,7 @@
         (click)="addEmail()"
         [disabled]="emails.controls.length === 5"
       >
-        <fa-icon [icon]="faAdd" size="xl" />
+        <fa-icon [icon]="faAdd" size="xl" class="add-icon" />
         Add email(s)
       </button>
 
@@ -93,7 +93,7 @@
             type="button"
             (click)="removeEmail($index)"
           >
-            <fa-icon [icon]="faRemove" size="xl" style="color: #ee3434" />
+            <fa-icon [icon]="faRemove" size="xl" style="color: var(--error)" />
           </button>
         </div>
         @if (formSubmitted && item.errors) {

@@ -36,6 +36,7 @@
 
 .contact-name {
   font-weight: 700;
+  color: var(--white);
 }
 
 h1 {

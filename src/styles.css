@@ -6,6 +6,7 @@
   --default-border-color: rgb(46, 46, 46);
   --warning: #ffa500;
   --error: #ee3434;
+  --background-color: #171717;
 }
 
 *,
@@ -23,17 +24,13 @@
   font: inherit;
 }
 
-/* Dark mode user-agent-styles */
-
-html {
-  color-scheme: dark light;
-}
-
 body {
   min-height: 100vh;
   font-family: system-ui;
   font-size: 1.125rem;
   line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--white);
 }
 
 .app-container {
@@ -62,6 +59,10 @@ video {
 }
 
 /* Button */
+
+button {
+  color: var(--white);
+}
 
 button:hover {
   cursor: pointer;

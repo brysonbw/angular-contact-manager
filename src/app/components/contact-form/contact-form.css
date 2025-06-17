@@ -11,7 +11,6 @@
 
 h2 {
   text-align: center;
-  color: var(--white);
   margin-bottom: 1.5rem;
   margin-top: 1rem;
   font-weight: 700;
@@ -33,6 +32,8 @@ input {
   border: 1px solid var(--default-border-color);
   border-radius: 8px;
   transition: border-color 0.2s;
+  background-color: transparent;
+  color: var(--white);
 }
 
 input:focus {
@@ -43,6 +44,10 @@ input:focus {
 .form-error {
   font-size: small;
   color: var(--error);
+}
+
+.add-icon {
+  color: #31db31;
 }
 
 .add-phone {
@@ -62,7 +67,6 @@ input:focus {
 }
 
 .form-button {
-  color: var(--white);
   font-weight: 700;
   padding: 0.8rem;
   font-size: 1rem;
