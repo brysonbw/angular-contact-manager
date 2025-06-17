@@ -38,21 +38,6 @@ export class ContactList {
   // Signals
   contactList = this.contactService.contacts;
 
-  public onEdit(id: string): void {
-    this.router.navigate(['contacts/view', id]);
-  }
-
-  public onDelete(contact: { firstName: string; id: string }): void {
-    if (
-      confirm(`Are you sure you want to delete contact [${contact.firstName}]?`)
-    ) {
-      this.contactService.deleteContact(contact.id);
-      this.toastService.add(`Contact deleted successfully!`);
-    } else {
-      this.toastService.add(`Unable to delete contact. Please try again.`);
-    }
-  }
-
   public viewContactDetail(id: string): void {
     this.router.navigate(['contacts/view', id]);
   }

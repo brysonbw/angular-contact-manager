@@ -167,12 +167,18 @@ export class ContactForm implements OnInit {
   public onDelete(id: string): void {
     if (this.isEditing()) {
       if (id) {
-        this.contactService.deleteContact(id);
-        this.toastService.add(`Contact deleted successfully!`);
-        this.router.navigate(['/']);
-      } else {
-        this.toastService.add(`Failed to delete contact. Please try again.`);
+        this.confirmDelete(id);
       }
+    }
+  }
+
+  private confirmDelete(id: string): void {
+    if (confirm(`Are you sure you want to delete contact?`)) {
+      this.contactService.deleteContact(id);
+      this.toastService.add(`Contact deleted successfully!`);
+      this.router.navigate(['/']);
+    } else {
+      this.toastService.add(`Unable to delete contact. Please try again.`);
     }
   }
 
