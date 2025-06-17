@@ -8,8 +8,8 @@
     <div class="row">
       <div class="circle-icon">
         <p>
-          {{ item.firstName.charAt(0) | uppercase }} {{ item?.lastName?.length ?
-          item?.lastName?.charAt(0) : null | uppercase }}
+          {{ item.firstName.charAt(0).toUpperCase() }} {{ item?.lastName?.length
+          ? item?.lastName?.charAt(0)?.toUpperCase() : null }}
         </p>
       </div>
     </div>

@@ -11,12 +11,10 @@ import {
 import { faTrash } from '@fortawesome/free-solid-svg-icons/faTrash';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { Router } from '@angular/router';
-import { ToastService } from '../../../services/toast.service';
-import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-contact-list',
-  imports: [FontAwesomeModule, UpperCasePipe],
+  imports: [FontAwesomeModule],
   templateUrl: './contact-list.html',
   styleUrl: './contact-list.css',
 })
@@ -32,7 +30,6 @@ export class ContactList {
 
   // Services
   private contactService = inject(ContactService);
-  private toastService = inject(ToastService);
   private router = inject(Router);
 
   // Signals
