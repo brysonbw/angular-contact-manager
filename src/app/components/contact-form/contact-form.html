@@ -1,0 +1,125 @@
+<!-- Contact Edit/Create Form Card -->
+<div class="card">
+  <fa-icon
+    [icon]="faUser"
+    size="2xl"
+    style="display: flex; justify-content: center"
+  />
+  <h2>{{ formTitle }}</h2>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <!-- First Name Field -->
+    <div class="form-group">
+      <label>
+        First Name
+        <input formControlName="firstName" type="text" />
+      </label>
+      @if (firstNameIsInvalid) {
+      <em class="form-error">{{ firstNameIsInvalid }}</em>
+      }
+    </div>
+    <!-- Last Name Field -->
+    <div class="form-group">
+      <label
+        >Last Name
+        <input formControlName="lastName" type="text" />
+      </label>
+      @if (lastNameIsInvalid) {
+      <em class="form-error">{{ lastNameIsInvalid }}</em>
+      }
+    </div>
+
+    <div class="form-group">
+      <label
+        >Company
+        <input formControlName="company" type="text" />
+      </label>
+      @if (companyIsInvalid) {
+      <em class="error">{{ companyIsInvalid }}</em>
+      }
+    </div>
+    <!-- Phone Number Field(s) -->
+    <div class="form-group">
+      <button
+        class="add-phone button-transparent"
+        type="button"
+        (click)="addPhoneNumber()"
+      >
+        <fa-icon [icon]="faAdd" size="xl" />
+        Add phone number(s)
+      </button>
+
+      <div
+        style="display: flex; flex-direction: column; gap: 15px"
+        formArrayName="phoneNumbers"
+      >
+        @for (item of phoneNumbers.controls; track $index) {
+        <div style="display: flex; flex-direction: row; gap: 5px">
+          <input type="text" [formControlName]="$index" />
+          <button
+            class="button-transparent"
+            type="button"
+            (click)="removePhoneNumber($index)"
+            [disabled]="phoneNumbers.controls.length === 5"
+          >
+            <fa-icon [icon]="faRemove" size="xl" style="color: #ee3434" />
+          </button>
+        </div>
+        @if (formSubmitted && item.errors) {
+        <em class="form-error">Invalid - min 7 digits, max 15</em>
+        } }
+      </div>
+    </div>
+    <!-- Email Field(s) -->
+    <div class="form-group">
+      <button
+        class="add-email button-transparent"
+        type="button"
+        (click)="addEmail()"
+        [disabled]="emails.controls.length === 5"
+      >
+        <fa-icon [icon]="faAdd" size="xl" />
+        Add email(s)
+      </button>
+
+      <div
+        style="display: flex; flex-direction: column; gap: 15px"
+        formArrayName="emails"
+      >
+        @for (item of emails.controls; track $index) {
+        <div style="display: flex; flex-direction: row; gap: 5px">
+          <input type="text" [formControlName]="$index" />
+          <button
+            class="button-transparent"
+            type="button"
+            (click)="removeEmail($index)"
+          >
+            <fa-icon [icon]="faRemove" size="xl" style="color: #ee3434" />
+          </button>
+        </div>
+        @if (formSubmitted && item.errors) {
+        <em class="form-error">Email invalid</em>
+        } }
+      </div>
+    </div>
+    <!-- Action Buttons -->
+    <button class="submit-button form-button" type="submit">
+      {{ formSubmitButtonText }}
+    </button>
+    @if (isEditing()) {
+    <button
+      class="del-button form-button"
+      (click)="onDelete(form.get('id')?.value!)"
+      type="button"
+    >
+      Delete
+    </button>
+    }
+    <button
+      class="cancel-button form-button"
+      (click)="onCancel()"
+      type="button"
+    >
+      {{ isEditing() ? "Go Back" : "Cancel" }}
+    </button>
+  </form>
+</div>

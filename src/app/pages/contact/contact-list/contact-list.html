@@ -1,0 +1,48 @@
+<h1>Contacts</h1>
+<!-- Contact List Grid -->
+@if (contactList().length) {
+<div class="grid">
+  <!-- Contact Card -->
+  @for (item of contactList(); track $index) {
+  <div class="card">
+    <div class="row">
+      <div class="circle-icon">
+        <p>
+          {{ item.firstName.charAt(0) | uppercase }} {{ item?.lastName?.length ?
+          item?.lastName?.charAt(0) : null | uppercase }}
+        </p>
+      </div>
+    </div>
+    <div class="row">
+      <button
+        class="button-transparent contact-name"
+        (click)="viewContactDetail(item.id)"
+      >
+        {{ item.firstName }} {{ item.lastName || null }}
+      </button>
+    </div>
+
+    <div class="contact-info-container">
+      <button class="button-transparent contact-info">
+        <fa-icon size="sm" [icon]="faCompany" />
+        {{ item.company || 'N/A' }}
+      </button>
+
+      <button class="button-transparent contact-info">
+        <fa-icon size="sm" [icon]="faPhone" />
+        {{ item.phoneNumbers.length ? `${item.phoneNumbers.length > 1 ?
+        `${item.phoneNumbers[0]}...` : `${item.phoneNumbers[0]}`}` : 'N/A'}}
+      </button>
+
+      <button class="button-transparent contact-info">
+        <fa-icon size="sm" [icon]="faEmail" />
+        {{ item.emails.length ? `${item.emails.length > 1 ?
+        `${item.emails[0]}...` : `${item.emails[0]}`}` : 'N/A'}}
+      </button>
+    </div>
+  </div>
+  }
+</div>
+} @else {
+<em class="placeholder-text">No contacts to display.</em>
+}

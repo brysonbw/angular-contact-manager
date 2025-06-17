@@ -1,0 +1,99 @@
+.card {
+  min-width: 300px;
+  margin: auto;
+  padding: 2rem;
+  background: transparent;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+  border: 1px solid var(--default-border-color);
+}
+
+h2 {
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  font-weight: 700;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.65rem;
+  font-size: 1rem;
+  border: 1px solid var(--default-border-color);
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-error {
+  font-size: small;
+  color: var(--error);
+}
+
+.add-phone {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.add-email {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 5px;
+}
+
+.form-button {
+  color: var(--white);
+  font-weight: 700;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background-color 0.2s;
+  width: 100%;
+}
+
+.submit-button {
+  background-color: #007bff;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.del-button {
+  background-color: var(--error);
+}
+
+.del-button:hover {
+  background-color: #be2d2d;
+}
+
+.cancel-button {
+  background-color: var(--warning);
+}
+
+.cancel-button:hover {
+  background-color: #c78203;
+}

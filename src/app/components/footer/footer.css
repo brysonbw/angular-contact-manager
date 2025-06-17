@@ -1,0 +1,42 @@
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 10vh;
+  flex-wrap: wrap;
+}
+
+.footer-text {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #acacac;
+  font-size: 1rem;
+}
+
+span.angular-icon {
+  color: #d46bfd;
+}
+
+span:hover {
+  color: var(--white);
+}
+
+a {
+  text-decoration: none;
+}
+
+.github-icon {
+  color: var(--white);
+}
+
+.github-icon:hover {
+  color: rgb(186, 185, 185);
+}
+/* Mobile phones */
+
+@media only screen and (max-width: 640px) {
+  .footer-text {
+    font-size: 0.7rem;
+  }
+}

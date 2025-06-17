@@ -1,0 +1,14 @@
+<div class="app-container">
+  <main class="app-content">
+    @if (!pageNotFoundShown()) {
+    <app-header />
+    }
+    <router-outlet />
+  </main>
+  @if (!pageNotFoundShown()) {
+  <app-footer />
+  }
+</div>
+
+<!-- Toaster -->
+<app-toaster />

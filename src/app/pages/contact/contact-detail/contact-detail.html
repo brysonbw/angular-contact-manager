@@ -1,0 +1,7 @@
+@if (contactItem()) {
+<app-contact-form [isEditing]="true" [formData]="contactItem()" />
+} @else {
+<em class="placeholder-text"
+  >Unable to display contact item. Please refresh browser and/or try again.</em
+>
+}

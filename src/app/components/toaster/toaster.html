@@ -1,0 +1,29 @@
+<div class="toast-container">
+  <ng-container>
+    @for (toast of toastList(); track $index) {
+    <div
+      [id]="'toast-' + toast.type + '-' + toast.id"
+      [class]="['toast', getToastPosition(toast.position)]"
+      [style]="{ top: 10 + $index * 75 + 'px', position: 'fixed' }"
+      role="alert"
+    >
+      <!-- Toast Icon -->
+      <div [class]="'toast-' + toast.type" class="toast-icon">
+        <fa-icon [icon]="getIcon(toast.type)" size="lg"> </fa-icon>
+      </div>
+      <!-- Toast Message -->
+      <div class="toast-message">{{ toast.message }}</div>
+      <!-- Close Toast -->
+      <button
+        (click)="dismissToast(toast)"
+        type="button"
+        class="toast-close button-transparent"
+        aria-label="Close"
+      >
+        <span class="sr-only">Close</span>
+        <fa-icon [icon]="faClose" size="lg" style="color: #ee3434" />
+      </button>
+    </div>
+    }
+  </ng-container>
+</div>

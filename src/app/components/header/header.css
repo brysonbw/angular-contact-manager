@@ -1,0 +1,40 @@
+header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.nav-brand {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  margin-left: 10px;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+}
+
+.nav-list {
+  display: inline-block;
+}
+
+.nav-list,
+a {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.nav-list a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
