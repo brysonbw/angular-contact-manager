@@ -1,4 +1,4 @@
-# ContactManager
+# Contact Manager
 
 Simple CRUD contact list/manager using local storage
 
