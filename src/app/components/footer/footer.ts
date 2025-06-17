@@ -17,12 +17,12 @@ export class Footer {
   // Services
   private appService = inject(AppService);
 
-  get currentYear(): string {
+  public get currentYear(): string {
     const date = new Date();
     return date.getFullYear().toString();
   }
 
-  get appTitle(): string {
+  public get appTitle(): string {
     return this.appService.APP_TITLE;
   }
 }
