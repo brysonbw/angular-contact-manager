@@ -24,6 +24,8 @@ export class Toaster {
 
   // Services
   private toastService = inject(ToastService);
+
+  // Signals
   toastList = this.toastService.toasts;
 
   /**
@@ -37,7 +39,6 @@ export class Toaster {
   /**
    * Get toast icon based on toast type (e.g success, info, warning, ect...)
    * @param type
-   * @returns
    */
   getIcon(type: string): IconDefinition {
     switch (type) {
